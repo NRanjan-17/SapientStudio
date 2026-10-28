@@ -1,9 +1,8 @@
 # Sapient Studio
 
 Run large language models on iPhone and iPad, entirely on the device, with
-[SAPIENT](https://github.com/SkidGod4444/sapient), a pure-Rust edge inference
-engine. Chat with them, benchmark them, and serve them to other apps and
-devices through an OpenAI-compatible API.
+SAPIENT, a pure-Rust edge inference engine. Chat with them, benchmark them,
+and serve them to other apps and devices through an OpenAI-compatible API.
 
 Nothing you type leaves the device. Models download once from Hugging Face and
 then run offline.

@@ -27,14 +27,14 @@ Other ways to use SAPIENT, including embedding the engine in your own app:
 In Xcode: **File → Add Package Dependencies**, enter
 
 ```
-https://github.com/NRanjan-17/SapientChat
+https://github.com/NRanjan-17/SapientStudio
 ```
 
 and add the **SapientKit** product to your app target (only SapientKit builds;
 the app itself isn't part of the package). Or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/NRanjan-17/SapientChat", from: "1.0.0"),
+.package(url: "https://github.com/NRanjan-17/SapientStudio", from: "1.0.0"),
 // target dependency:
 .product(name: "SapientKit", package: "SapientStudio"),
 ```

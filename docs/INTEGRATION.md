@@ -110,7 +110,7 @@ API with Swift types, over HTTP or, on the same iPhone, a URL handoff that bring
 Sapient Studio to the front and returns the result to your app.
 
 Add it by URL: Xcode → File → Add Package Dependencies →
-`https://github.com/NRanjan-17/SapientChat`, product **SapientKit** (MIT).
+`https://github.com/NRanjan-17/SapientStudio`, product **SapientKit** (MIT).
 
 ```swift
 import SapientKit

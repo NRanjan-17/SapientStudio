@@ -3,7 +3,7 @@
 // Copyright (c) 2026 OpenHorizon Labs Pvt Ltd — SapientKit (see SapientKit/LICENSE)
 
 // SapientKit as a Swift package other apps add by this repository's URL:
-// File → Add Package Dependencies → https://github.com/NRanjan-17/SapientChat
+// File → Add Package Dependencies → https://github.com/NRanjan-17/SapientStudio
 // → product "SapientKit". Only SapientKit builds; the app's Xcode project is
 // separate and unaffected.
 import PackageDescription
