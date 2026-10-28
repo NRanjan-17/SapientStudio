@@ -25,7 +25,10 @@ private struct PageTitle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .safeAreaInset(edge: .top, spacing: 0) {
-                if horizontalSizeClass == .regular {
+                // Only iPad (and the Mac running the iPad app) puts the tabs
+                // in the title's row. Every iPhone, iPhone Duo open
+                // included, draws the title in the navigation bar itself.
+                if horizontalSizeClass == .regular && UIDevice.current.userInterfaceIdiom == .pad {
                     Text(title)
                         .font(.largeTitle.bold())
                         .frame(maxWidth: .infinity, alignment: .leading)

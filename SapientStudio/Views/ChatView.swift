@@ -81,6 +81,9 @@ struct ChatView: View {
                 }
                 .disabled(viewModel.isBusy)
             }
+            // When the bar is short of room, the model menu stays out of
+            // the overflow menu longest.
+            .visibilityPriority(.high)
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Model Stats", systemImage: "chart.bar.xaxis", action: showStats)
             }

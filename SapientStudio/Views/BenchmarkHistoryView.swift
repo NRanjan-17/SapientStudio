@@ -37,15 +37,16 @@ struct BenchmarkHistoryView: View {
                     Button("Done") { dismiss() }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Menu {
-                        ShareLink(item: history.exportJSON(), preview: SharePreview("Sapient benchmark history")) {
-                            Label("Export as JSON", systemImage: "square.and.arrow.up")
-                        }
-                        Button("Clear History", systemImage: "trash", role: .destructive) { isConfirmingClear = true }
-                    } label: {
-                        Label("More", systemImage: "ellipsis.circle")
+                    ShareLink(item: history.exportJSON(), preview: SharePreview("Sapient benchmark history")) {
+                        Label("Export as JSON", systemImage: "square.and.arrow.up")
                     }
                     .disabled(history.entries.isEmpty)
+                }
+                // The system's overflow menu, not one of our own, so it sits
+                // where people expect on every bar, side bars included.
+                ToolbarOverflowMenu {
+                    Button("Clear History", systemImage: "trash", role: .destructive) { isConfirmingClear = true }
+                        .disabled(history.entries.isEmpty)
                 }
             }
             .alert("Clear benchmark history?", isPresented: $isConfirmingClear) {

@@ -26,10 +26,28 @@ then run offline.
 
 ## Requirements
 
-- Xcode 27, iOS/iPadOS 27.
-- An iPhone or iPad. Apple chips with 6 GB of RAM or more get CPU + GPU by
-  default; smaller devices use the GPU. The simulator works for development
-  (its numbers measure the Mac, not a phone).
+- Xcode 27.1, iOS/iPadOS 27.1.
+- An iPhone, iPhone Duo or iPad. Apple chips with 6 GB of RAM or more get
+  CPU + GPU by default; smaller devices use the GPU. The simulator works for
+  development (its numbers measure the Mac, not a phone).
+
+## iPhone Duo
+
+Sapient Studio uses the system's own layouts on iPhone Duo, with no custom
+fold handling:
+
+- **Closed** (outer display): the iPhone layout, with the tab bar and
+  toolbars down the side.
+- **Open** (inner display): the iPad layout, with the tab bar down the side
+  in landscape. The chat list always sits beside the open chat; Benchmark,
+  Compare, Prompt Sets and Playground put setup and results in two equal
+  halves (`ArrangementView`).
+- **Half-folded**: the same layouts, with the halves on either side of the
+  fold.
+- Every orientation is supported, on every iPhone.
+
+Test in Xcode's Device Hub with the **iPhone Duo** simulator, and switch
+poses there.
 
 ## Build and run
 

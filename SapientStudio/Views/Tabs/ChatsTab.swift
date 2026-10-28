@@ -9,8 +9,12 @@ struct ChatsTab: View {
     let viewModel: ChatListViewModel
 
     var body: some View {
-        NavigationSplitView {
+        // The chat list always beside the open chat when there's room
+        // (iPad, iPhone Duo open), in portrait too; one at a time on narrow
+        // screens. No sidebar button, so the list can't be hidden.
+        NavigationSplitView(columnVisibility: .constant(.all)) {
             ChatListView(viewModel: viewModel)
+                .toolbar(removing: .sidebarToggle)
         } detail: {
             if let chat = viewModel.activeChat {
                 ChatView(viewModel: chat, list: viewModel)
@@ -21,5 +25,7 @@ struct ChatsTab: View {
                     .background { AmbientBackground() }
             }
         }
+        // Columns share the width rather than the list sliding over the chat.
+        .navigationSplitViewStyle(.balanced)
     }
 }
